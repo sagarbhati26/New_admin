@@ -1,18 +1,30 @@
-import React from 'react'
-import Sidebar from './Components/Sidebar'
-import NavBar from './Components/NavBar'
-import MainContent from './Components/MainContent'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Sidebar from './Components/Sidebar';
+import NavBar from './Components/NavBar';
+import MainContent from './Components/MainContent';
+import Profile from './Components/Profile';
+import Reports from './Components/Reports';
+import Cource from './Components/Cource';
 
 const App = () => {
   return (
-    <div>
- 
-      <Sidebar/>
-      <div id="content">
-      <NavBar/>
-      <MainContent/></div>
-    </div>
-  )
-}
+    <Router>
+      <div>
+        <Sidebar />
+        <div id="content">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+            <Route path="/Cource" element={<Cource />} />
+            <Route path="/Reports" element={<Reports />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;

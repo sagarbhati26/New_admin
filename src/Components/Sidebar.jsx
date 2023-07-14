@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+// import Reports from './Reports';
 
 const Sidebar = () => {
   useEffect(() => {
@@ -30,87 +32,34 @@ const Sidebar = () => {
         </div>
         <ul className="list-unstyled components">
           <li className="active">
-            <a href="#" className="dashboard">
+            <Link to="/" className="dashboard">
               <i className="material-icons">dashboard</i>
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
 
           <div className="small-screen navbar-display">
-            <li className="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
-              <a
-                href="#homeSubmenu0"
-                className="dropdown-toggle"
-              >
-                <i className="material-icons">notifications</i>
-                <span>4 notification</span>
-              </a>
-              <ul className="collapse list-unstyled menu" id="homeSubmenu0">
-                <li>
-                  <a href="#">You have 5 new messages</a>
-                </li>
-                <li>
-                  <a href="#">You're now friend with Mike</a>
-                </li>
-                <li>
-                  <a href="#">Wish Mary on her birthday!</a>
-                </li>
-                <li>
-                  <a href="#">5 warnings in Server Console</a>
-                </li>
-              </ul>
-            </li>
-
-            <li className="d-lg-none d-md-block d-xl-none d-sm-block">
-              <a href="#">
-                <i className="material-icons">apps</i>
-                <span>apps</span>
-              </a>
-            </li>
-
-            <li className="d-lg-none d-md-block d-xl-none d-sm-block">
-              <a href="#">
-                <i className="material-icons">person</i>
-                <span>user</span>
-              </a>
-            </li>
-
-            <li className="d-lg-none d-md-block d-xl-none d-sm-block">
-              <a href="#">
-                <i className="material-icons">settings</i>
-                <span>setting</span>
-              </a>
-            </li>
+            {/* Other menu items */}
           </div>
 
-         
-
         
-       
-
-       
-
-      
-
-         
-         
           <li className="">
-            <a href="#">
+            <Link to="/Cource">
               <i className="material-icons">library_books</i>
               <span>Courses</span>
-            </a>
+            </Link>
           </li>
           <li className="">
-            <a href="#">
+            <Link to="/Reports">
               <i className="material-icons">library_books</i>
               <span>Reports</span>
-            </a>
+            </Link>
           </li>
           <li className="">
-            <a href="#">
+            <Link to="./Profile">
               <i className="material-icons">library_books</i>
               <span>Profile</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
