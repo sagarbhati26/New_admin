@@ -1,11 +1,47 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import './reports.css'
+import UserData from './UserData';
+
+const API = 'https://jsonplaceholder.typicode.com/users';
 
 const Reports = () => {
-  return (
-    <div>
-      <h1 style={{padding:'30%'}}>This is Report page</h1>
-    </div>
-  )
-}
+  const [users, setUsers] = useState([]);
 
-export default Reports
+  const fetchUsers = async (url) => {
+    try {
+      const response = await axios.get(url);
+      const data = response.data;
+      if (data.length > 0) {
+        setUsers(data);
+      }
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers(API);
+  }, []);
+
+  return (
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <UserData users={users} />
+        </tbody>
+      </table>
+    </>
+  );
+};
+
+export default Reports;
