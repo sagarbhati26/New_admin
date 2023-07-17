@@ -8,10 +8,11 @@
 .card {
   width: 200px;
   height: 200px;
-  background-color: rgb(18, 99, 125);
+  /* background-color: rgb(18, 99, 125); */
   margin: 10px;
   text-align: center;
   border-radius: 20px;
+  /* padding: 10px; */
 }
 
 .card-main {
@@ -47,7 +48,7 @@
 .dropdown {
   width: 200px;
   padding: 5px;
-  border: 1px solid #898989;
+  /* border: 1px solid #898989; */
   border-radius: 4px;
   background-color: white;
   color: #333;
@@ -98,6 +99,22 @@
 }
 .labelData{
   margin-top: 20%;
+}
+.card-change{
+
+  padding: 10px;
+}
+.card {
+  width: 200px;
+  height: 200px;
+  margin: 10px; /* Add margin property */
+  /* Other existing CSS properties */
+
+  /* Updated margin properties */
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 
