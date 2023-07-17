@@ -1,11 +1,107 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './Report.css';
+import TableMain from '../Table/TableMain';
+import Table1 from '../Table/Table1';
+import Table2 from '../Table/Table2';
 
-const Reports = () => {
+
+
+
+const Report = () => {
+  const [tableData, setTableData] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+
+  const handleButton1Click = () => {
+    // Logic to fetch or generate data for table 1
+    const newData = [/* Data for table 1 */];
+    setTableData(newData);
+    setSelectedOption(1);
+  };
+
+  const handleButton2Click = () => {
+    // Logic to fetch or generate data for table 2
+    const newData = [/* Data for table 2 */];
+    setTableData(newData);
+    setSelectedOption(2);
+  };
+
+  const handleButton3Click = () => {
+    // Logic to fetch or generate data for table 3
+    const newData = [/* Data for table 3 */];
+    setTableData(newData);
+    setSelectedOption(3);
+  };
+
   return (
-    <div>
-      <h1 style={{padding:'30%'}}>This is Report page</h1>
-    </div>
-  )
-}
+    <div className="row container4">
+      <table>
+        <tbody>
+          {tableData.map((row, index) => (
+            <tr key={index}>
+              {row.map((cell, cellIndex) => (
+                <td key={cellIndex}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-export default Reports
+      <div className="col-lg-4 col-md-6 col-sm-6">
+        <div
+          className={`card card-stats ${selectedOption === 1 ? 'selected' : ''}`}
+          onClick={handleButton1Click} style={{cursor:'pointer'}}
+        >
+          <div className="card-header">
+            <div className="icon icon-warning">
+              <span className="material-icons">visibility</span>
+            </div>
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Courses Report</h3>
+          </div>
+          <div className="card-footer"></div>
+        </div>
+      </div>
+
+      <div className="col-lg-4 col-md-6 col-sm-6">
+        <div
+          className={`card card-stats ${selectedOption === 2 ? 'selected' : ''}`}
+          onClick={handleButton2Click} style={{cursor:'pointer'}}
+        >
+          <div className="card-header">
+            <div className="icon icon-success">
+              <span className="material-icons"><a href="">visibility</a></span>
+            </div>
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Student's Report</h3>
+          </div>
+          <div className="card-footer"></div>
+        </div>
+      </div>
+
+      <div className="col-lg-4 col-md-6 col-sm-6">
+        <div
+          className={`card card-stats ${selectedOption === 3 ? 'selected' : ''}`}
+          onClick={handleButton3Click} style={{cursor:'pointer'}}
+        >
+          <div className="card-header">
+            <div className="icon icon-info">
+              <span className="material-icons">visibility</span>
+            </div>
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Test Report</h3>
+          </div>
+          <div className="card-footer"></div>
+        </div>
+      </div>
+
+      {selectedOption === 1 && <TableMain />}
+      {selectedOption === 2 && <Table1 />}
+      {selectedOption === 3 && <Table2 />}
+    </div>
+  );
+};
+
+export default Report;

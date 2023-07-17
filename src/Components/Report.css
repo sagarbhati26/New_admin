@@ -1,0 +1,19 @@
+.input-container4 {
+  position: relative;
+}
+
+#toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#password-input {
+  padding-right: 30px; /* Ensure enough space for the eye icon */
+}
+
+.fa-eye {
+  font-size: 16px;
+}

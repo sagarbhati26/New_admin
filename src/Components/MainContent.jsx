@@ -1,84 +1,108 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './MainContaint.css';
 
 const MainContent = () => {
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const renderBatches = () => {
+    if (selectedOption === 'fsd') {
+      return (
+        <div>
+          <h3>FSD</h3>
+          <div className="card text-white bg-primary mb-3" style={{ maxWidth: "18rem" }}>
+            <h4>A1</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">100</label> <br />
+              <label for="label1" className="label">Present </label>
+              <label for="label2" className="label">90</label>
+            </div>
+          </div>
+
+
+          <div className="card text-white bg-secondary mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>A2</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">200</label> <br />
+              <label for="label1" className="label">Present</label>
+              <label for="label2" className="label">170</label>
+            </div>
+
+
+          </div>
+
+          <div className="card text-white bg-success mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>A3</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students</label>
+              <label for="label2" className="label">500</label> <br />
+              <label for="label1" className="label">Present</label>
+              <label for="label2" className="label">450</label>
+            </div>
+          </div>
+
+        </div>
+      );
+    } else if (selectedOption === 'ds') {
+      return (
+        <div className=''>
+            <h3>DS</h3>
+          <div className="card text-white bg-danger mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>B1</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students</label>
+              <label for="label2" className="label">300</label> <br />
+              <label for="label1" className="label">Present</label>
+              <label for="label2" className="label">255</label>
+            </div>
+          </div>
+
+
+          <div className="card text-white bg-warning mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>B2</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total</label>
+              <label for="label2" className="label">Label 2:</label> <br />
+              <label for="label1" className="label">Label 1:</label>
+              <label for="label2" className="label">Label 2:</label>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
-    
-      <div className="row">
-        <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card card-stats">
-            <div className="card-header">
-              <div className="icon icon-warning">
-                <span className="material-icons">equalizer</span>
-              </div>
-            </div>
-            <div className="card-content">
-              <p className="category"><strong>Visits</strong></p>
-              <h3 className="card-title">70,340</h3>
-            </div>
-            <div className="card-footer">
-              <div className="stats">
-                <i className="material-icons text-info">info</i>
-                <a href="#pablo">See detailed report</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card card-stats">
-            <div className="card-header">
-              <div className="icon icon-rose">
-                <span className="material-icons">shopping_cart</span>
-              </div>
-            </div>
-            <div className="card-content">
-              <p className="category"><strong>Orders</strong></p>
-              <h3 className="card-title">102</h3>
-            </div>
-            <div className="card-footer">
-              <div className="stats">
-                <i className="material-icons">local_offer</i> Product-wise sales
-              </div>
+    <div>
+      <div className='card-main'>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-title"></div>
+            <div className="dropdown-container">
+              <span className='course' style={{ padding: '10px', paddingTop: '25px' }}><div className="dropdown-label">Course : </div></span>
+
+              <select
+                className="dropdown"
+                value={selectedOption}
+                onChange={handleOptionChange}
+              >
+                <option value="">Select an option</option>
+                <option value="fsd">FSD</option>
+                <option value="ds">DS</option>
+              </select>
             </div>
           </div>
-        </div>
-        <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card card-stats">
-            <div className="card-header">
-              <div className="icon icon-success">
-                <span className="material-icons">attach_money</span>
-              </div>
-            </div>
-            <div className="card-content">
-              <p className="category"><strong>Revenue</strong></p>
-              <h3 className="card-title">$23,100</h3>
-            </div>
-            <div className="card-footer">
-              <div className="stats">
-                <i className="material-icons">date_range</i> Weekly sales
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card card-stats">
-            <div className="card-header">
-              <div className="icon icon-info">
-                <span className="material-icons">follow_the_signs</span>
-              </div>
-            </div>
-            <div className="card-content">
-              <p className="category"><strong>Followers</strong></p>
-              <h3 className="card-title">+245</h3>
-            </div>
-            <div className="card-footer">
-              <div className="stats">
-                <i className="material-icons">update</i> Just Updated
-              </div>
-            </div>
-          </div>
+          {renderBatches()}
         </div>
       </div>
-    
+    </div>
   );
 };
 

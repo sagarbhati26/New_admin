@@ -26,8 +26,8 @@ const Sidebar = () => {
       <nav id="sidebar">
         <div className="sidebar-header">
           <h3>
-            <img src="img/logo.png" className="img-fluid" alt="Logo" />
-            <span>Vishweb design</span>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBih65t2n8CtRUgwYOxSUy_i7mXikr0zAGcVqlElI&s" className="img-fluid" alt="Logo" />
+            <span>Hoping Minds</span>
           </h3>
         </div>
         <ul className="list-unstyled components">
