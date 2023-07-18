@@ -8,7 +8,7 @@ const Table1 = () => {
   React.useEffect(() => {
     const getStudents = async () => {
       try {
-        const response = await axios.get('http://192.168.1.55:3000/fetchData');
+        const response = await axios.get('http://192.168.0.117:3001/getCourseData');
         setStudents(response.data);
       } catch (error) {
         console.log(error);
@@ -20,40 +20,40 @@ const Table1 = () => {
 
   const columns = [
     {
-      name: 'Batch_Name',
-      selector: (row) => row.Batch_Name,
+      name: 'Student ID',
+      selector: (row) => row.studentId,
       sortable: true,
     },
     {
-      name: 'Apti_Instructor',
-      selector: (row) => row.Apti_Instructor,
+      name: 'Email',
+      selector: (row) => row.email,
       sortable: true,
     },
     {
-      name: 'PD_Instructor',
-      selector: (row) => row.PD_Instructor,
+      name: 'Apptitude',
+      selector: (row) => row.Apptitude,
       sortable: true,
     },
     {
-      name: 'Tech_Instructor',
-      selector: (row) => row.Tech_Instructor,
+      name: 'English',
+      selector: (row) => row.English,
       sortable: true,
     },
     {
-      name: 'Starting_Date',
-      selector: (row) => row.Starting_Date,
+      name: 'Technical',
+      selector: (row) => row.Technical,
       sortable: true,
     },
     {
-        name: 'Tech_Test_share',
-        selector: (row) => row.Tech_Test_share,
+        name: 'Average',
+        selector: (row) => row.Average,
         sortable: true,
       },
   ];
 
   return (
     <div className="table container">
-      <h1 style={{textAlign:'center'}}>Student's Report</h1>
+      <h1 style={{textAlign:'center'}}>Total LOI students</h1>
       <DataTable
         columns={columns}
         data={students}

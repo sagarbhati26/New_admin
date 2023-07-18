@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Sidebar from './Components/Sidebar';
 import NavBar from './Components/NavBar';
-import MainContent from './Components/MainContent';
 import Profile from './Components/Profile';
 import Reports from './Components/Reports';
 import Cource from './Components/Cource';
+import MainContaint from './Daashboard/MainContent';
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <div id="content">
           <NavBar />
           <Routes>
-            <Route path="/" element={<MainContent />} />
+            <Route path="/" element={<MainContaint/>} />
             <Route path="/Cource" element={<Cource />} />
             <Route path="/Reports" element={<Reports />} />
             <Route path="/Profile" element={<Profile />} />

@@ -1,146 +1,105 @@
-import React, { useState } from "react";
-import "./Cource.css";
-import BatchReport from "./BatchReport";
+import React, { useState } from 'react';
+import './Cource.css';
 
 const Course = () => {
-  const [selectedCourse, setSelectedCourse] = useState("FSD");
-  const [showComponent, setShowComponent] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleCourseChange = (event) => {
-    setSelectedCourse(event.target.value);
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
   };
 
-  const handleIconClick = () => {
-    setShowComponent(true);
-  };
+  const renderBatches = () => {
+    if (selectedOption === 'fsd') {
+      return (
+        <div>
+          <h3>FSD</h3>
+          <div className="card text-white bg-primary mb-3" style={{ maxWidth: "18rem" }}>
+            <h4>A1</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">100</label> <br />
+              <label for="label1" className="label">Present </label>
+              <label for="label2" className="label">90</label>
+            </div>
+          </div>
 
-  const handleCloseComponent = () => {
-    setShowComponent(false);
+
+          <div className="card text-white bg-secondary mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>A2</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">200</label> <br />
+              <label for="label1" className="label">Present</label>
+              <label for="label2" className="label">170</label>
+            </div>
+
+
+          </div>
+
+          <div className="card text-white bg-success mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>A3</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students:</label>
+              <label for="label2" className="label">500</label> <br />
+              <label for="label1" className="label">Presents:</label>
+              <label for="label2" className="label">450</label>
+            </div>
+          </div>
+
+        </div>
+      );
+    } else if (selectedOption === 'ds') {
+      return (
+        <div className=''>
+            <h3>DS</h3>
+          <div className="card text-white bg-danger mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>B1</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">300</label> <br />
+              <label for="label1" className="label">Present:</label>
+              <label for="label2" className="label">255</label>
+            </div>
+          </div>
+
+
+          <div className="card text-white bg-warning mb-3" style={{ maxWidth: "18rem" }}>
+          <h4>B2</h4>
+            <div className='labelData'>
+              <label for="label1" className="label">Total Students: </label>
+              <label for="label2" className="label">100</label> <br />
+              <label for="label1" className="label">Present:</label>
+              <label for="label2" className="label">60:</label>
+            </div>
+          </div>
+        </div>
+      );
+    } else {
+      return null;
+    }
   };
 
   return (
-    <div className="cource-box">
-      <div className="row bg-white">
-        <div className="col-md-9 offset-md-1">
-          <div className="mb-4">
-            <div className="dropdown">
-              <button className="dropdown-button btn">Select Course</button>
-              <div className="dropdown-content">
-                <button
-                  className="btn"
-                  value="FSD"
-                  onClick={handleCourseChange}
-                >
-                  FSD
-                </button>
-                <button className="btn" value="DS" onClick={handleCourseChange}>
-                  DS
-                </button>
-                <button
-                  className="btn"
-                  value="AWS"
-                  onClick={handleCourseChange}
-                >
-                  AWS
-                </button>
-              </div>
+    <div>
+      <div className='card-main'>
+        <div className="card">
+          <div className="card-content">
+            <div className="card-title"></div>
+            <div className="dropdown-container">
+              <span className='course' style={{padding:'10px',paddingTop:'25px', fontSize:'20px' }}><div className="dropdown-label">Course : </div></span>
+
+              <select
+                className="dropdown"
+                value={selectedOption}
+                onChange={handleOptionChange}
+              >
+                <option value="">Select an option</option>
+                <option value="fsd">FSD</option>
+                <option value="ds">DS</option>
+              </select>
             </div>
           </div>
-
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4 green-gradient">
-                <h5 className="card-title" id="batch1">
-                  batch-1
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4">
-                <h5 className="card-title" id="batch1">
-                  batch-2
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4">
-                <h5 className="card-title" id="batch1">
-                  batch-3
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4">
-                <h5 className="card-title" id="batch1">
-                  batch-4
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4">
-                <h5 className="card-title" id="batch1">
-                  batch-5
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card rounded shadow-sm p-3 mb-4">
-                <h5 className="card-title" id="batch1">
-                  batch-6
-                </h5>
-                <p className="card-text">
-                  This is the first {selectedCourse} batch.
-                </p>
-                <a className="info-link" onClick={handleIconClick}>
-                  <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
-                </a>
-              </div>
-            </div>
-
-            {showComponent && (
-              <div className="overlay">
-                <div className="overlay-content">
-                  <BatchReport />
-                  <button
-                    className="btn-close bg-primary"
-                    onClick={handleCloseComponent}
-                  >
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+          {renderBatches()}
         </div>
       </div>
     </div>

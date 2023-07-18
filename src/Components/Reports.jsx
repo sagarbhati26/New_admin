@@ -59,7 +59,7 @@ const Report = () => {
           <div className="card-content">
             <h3 className="card-title">Courses Report</h3>
           </div>
-          <div className="card-footer"></div>
+        
         </div>
       </div>
 
@@ -70,13 +70,13 @@ const Report = () => {
         >
           <div className="card-header">
             <div className="icon icon-success">
-              <span className="material-icons"><a href="">visibility</a></span>
+            <span className="material-icons">visibility</span>
             </div>
           </div>
           <div className="card-content">
             <h3 className="card-title">Student's Report</h3>
           </div>
-          <div className="card-footer"></div>
+          
         </div>
       </div>
 
@@ -93,7 +93,7 @@ const Report = () => {
           <div className="card-content">
             <h3 className="card-title">Test Report</h3>
           </div>
-          <div className="card-footer"></div>
+      
         </div>
       </div>
 
