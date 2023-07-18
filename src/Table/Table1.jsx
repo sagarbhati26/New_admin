@@ -20,33 +20,33 @@ const Table1 = () => {
 
   const columns = [
     {
-      name: 'Batch_Name',
-      selector: (row) => row.Batch_Name,
+      name: 'Student ID',
+      selector: (row) => row.studentId,
       sortable: true,
     },
     {
-      name: 'Apti_Instructor',
-      selector: (row) => row.Apti_Instructor,
+      name: 'Email',
+      selector: (row) => row.email,
       sortable: true,
     },
     {
-      name: 'PD_Instructor',
-      selector: (row) => row.PD_Instructor,
+      name: 'Apptitude',
+      selector: (row) => row.Apptitude,
       sortable: true,
     },
     {
-      name: 'Tech_Instructor',
-      selector: (row) => row.Tech_Instructor,
+      name: 'English',
+      selector: (row) => row.English,
       sortable: true,
     },
     {
-      name: 'Starting_Date',
-      selector: (row) => row.Starting_Date,
+      name: 'Technical',
+      selector: (row) => row.Technical,
       sortable: true,
     },
     {
-        name: 'Tech_Test_share',
-        selector: (row) => row.Tech_Test_share,
+        name: 'Average',
+        selector: (row) => row.Average,
         sortable: true,
       },
   ];
