@@ -29,9 +29,7 @@ const Cource = () => {
               <h5 className="card-title" id={`batch${index + 1}`}>
                 batch-{index + 1}
               </h5>
-              <p className="card-text">
-                This is the first FSD batch.
-              </p>
+              <p className="card-text">This is the first FSD batch.</p>
               <a className="info-link" onClick={handleIconClick}>
                 <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
               </a>
@@ -47,9 +45,7 @@ const Cource = () => {
               <h5 className="card-title" id={`batch${index + 1}`}>
                 batch-{index + 1}
               </h5>
-              <p className="card-text">
-                This is the first DS batch.
-              </p>
+              <p className="card-text">This is the first DS batch.</p>
               <a className="info-link" onClick={handleIconClick}>
                 <i className="bi bi-info-circle-fill ml-1 custom-icon"></i>
               </a>
@@ -77,14 +73,11 @@ const Cource = () => {
                 <button className="btn" value="DS" onClick={handleCourseChange}>
                   DS
                 </button>
-                
               </div>
             </div>
           </div>
 
-          <div className="row">
-            {generateCards()}
-          </div>
+          <div className="row">{generateCards()}</div>
         </div>
       </div>
 
