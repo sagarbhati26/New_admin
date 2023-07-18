@@ -89,8 +89,8 @@
   display: inline-block;
   font-family: 'Arial', sans-serif;
   font-size: 19px;
-  color: #d8cece;
-  margin-right: 20px;
+  color: #ede6e6;
+  /* margin-right: 20px; */
   /* margin-top: 30%; */
 }
 
@@ -104,18 +104,8 @@
 
   padding: 10px;
 }
-.card {
-  width: 200px;
-  height: 200px;
-  margin: 10px; /* Add margin property */
-  /* Other existing CSS properties */
 
-  /* Updated margin properties */
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
+
 
 
 
