@@ -8,11 +8,11 @@
 .card {
   width: 200px;
   height: 200px;
-  /* background-color: rgb(18, 99, 125); */
+  
   margin: 10px;
   text-align: center;
   border-radius: 20px;
-  /* padding: 10px; */
+  
 }
 
 .card-main {
@@ -48,7 +48,6 @@
 .dropdown {
   width: 200px;
   padding: 5px;
-  /* border: 1px solid #898989; */
   border-radius: 4px;
   background-color: white;
   color: #333;
@@ -109,5 +108,74 @@
 
 
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+}
 
+.dropdown-button {
+  background-color: #f8f9fa;
+  color: #212529;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f9fa;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: #212529;
+  padding: 8px 12px;
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: #b9bcbf;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-button {
+  background-color: #1a74cf;
+}
+.dropdown-content {
+  border-radius: 15px;
+}
+.custom-icon{
+color: blue;
+}
+.info-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+.overlay {
+  position: relative;
+}
+
+
+.btn-close {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  
+}
 
